@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Code Display</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .code-container {
+            background-color: #252526;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 700px;
+            overflow: hidden;
+        }
+        
+        .code-header {
+            background-color: #3c3c3c;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #45475a;
+        }
+        
+        .file-name {
+            color: #f5e0dc;
+            font-weight: bold;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .close {
+            background-color: #f38ba8;
+        }
+        
+        .minimize {
+            background-color: #f9e2af;
+        }
+        
+        .maximize {
+            background-color: #a6e3a1;
+        }
+        
+        .code-content {
+            padding: 20px;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        .line-numbers {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px 10px;
+            color: #6c7086;
+            text-align: right;
+            user-select: none;
+        }
+        
+        .code {
+            margin-left: 30px;
+            white-space: pre;
+            font-size: 14px;
+        }
+        
+        .property {
+            color: #9cdcfe;
+        }
+        
+        .value {
+            color: #dcdcaa;
+        }
+        
+        .number {
+            color: #b5cea8;
+        }
+        
+        .string {
+            color: #ce9178;
+        }
+        
+        .comment {
+            color: #6a9955;
+        }
+        
+        .special {
+            color: #569cd6;
+        }
+    </style>
+</head>
+<body>
+    <div class="code-container">
+        <div class="code-header">
+            <div class="file-name">syn-noise-data.cfg</div>
+            <div class="buttons">
+                <div class="button close"></div>
+                <div class="button minimize"></div>
+                <div class="button maximize"></div>
+            </div>
+        </div>
+        <div class="code-content">
+            <div class="line-numbers">
+                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>
+            </div>
+            <div class="code">
+<span class="property">sampling_rate:</span> <span class="number">16000</span>
+<span class="property">audioformat:</span> <span class="string">*.wav</span>
+<span class="property">audio_length:</span> <span class="number">10</span> <span class="comment"># min len of audio clip</span>
+<span class="property">silence_length:</span> <span class="number">0.2</span> <span class="comment"># min len of clean clip</span>
+<span class="property">total_hours:</span> <span class="number">1</span> <span class="comment"># num hours for data</span>
+<span class="property">snr_lower:</span> <span class="number">0</span> <span class="comment"># lower SNR bound</span>
+<span class="property">snr_upper:</span> <span class="number">40</span> <span class="comment"># higher SNR bound</span>
+<span class="property">total_snrlevels:</span> <span class="number">5</span>  <span class="comment"># SNR intervals</span>
+
+<span class="property">noise_dir:</span> <span class="string">noise</span>
+<span class="property">speech_dir:</span> <span class="string">clean</span>
+<span class="property">noise_types_excluded:</span> <span class="special">None</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

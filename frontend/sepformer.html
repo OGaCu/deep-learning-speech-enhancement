@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SepFormer Network Architecture Highlights</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #252526;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        h1 {
+            margin: 0;
+            color: #9cdcfe;
+            font-size: 24px;
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .component {
+            margin-bottom: 30px;
+            background-color: #252526;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .component-header {
+            background-color: #333;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .component-title {
+            color: #4ec9b0;
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        .component-description {
+            font-size: 12px;
+            color: #9cdcfe;
+        }
+        
+        pre {
+            background-color: #1e1e1e;
+            margin: 0;
+            padding: 15px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .line-numbers {
+            color: #858585;
+            text-align: right;
+            padding-right: 15px;
+            user-select: none;
+        }
+        
+        .token-comment {
+            color: #6a9955;
+            font-style: italic;
+        }
+        
+        .token-string {
+            color: #ce9178;
+        }
+        
+        .token-number {
+            color: #b5cea8;
+        }
+        
+        .token-keyword {
+            color: #569cd6;
+            font-weight: bold;
+        }
+        
+        .token-property {
+            color: #9cdcfe;
+        }
+        
+        .token-value {
+            color: #dcdcaa;
+        }
+        
+        .token-tag {
+            color: #c586c0;
+            font-weight: bold;
+        }
+        
+        .token-type {
+            color: #4ec9b0;
+            font-weight: bold;
+        }
+        
+        .token-punctuation {
+            color: #d4d4d4;
+        }
+        
+        .token-escape {
+            color: #d7ba7d;
+        }
+        
+        .highlight-line {
+            background-color: #2a2d2e;
+            display: block;
+        }
+        
+        footer {
+            background-color: #252526;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+        
+        .architecture-diagram {
+            margin: 30px 0;
+            text-align: center;
+            padding: 20px;
+            background-color: #252526;
+            border-radius: 8px;
+        }
+        
+        .diagram-title {
+            color: #4ec9b0;
+            margin-bottom: 15px;
+        }
+        
+        .network-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .diagram-box {
+            border: 2px solid #569cd6;
+            border-radius: 8px;
+            padding: 10px 20px;
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .encoder-box {
+            background-color: rgba(86, 156, 214, 0.1);
+            border-color: #569cd6;
+        }
+        
+        .masknet-box {
+            background-color: rgba(78, 201, 176, 0.1);
+            border-color: #4ec9b0;
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            padding: 20px;
+        }
+        
+        .transformer-box {
+            background-color: rgba(197, 134, 192, 0.1);
+            border-color: #c586c0;
+            min-width: 100px;
+        }
+        
+        .decoder-box {
+            background-color: rgba(206, 145, 120, 0.1);
+            border-color: #ce9178;
+        }
+        
+        .arrow {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .arrow::after {
+            content: "↓";
+            font-size: 24px;
+            color: #d4d4d4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="architecture-diagram">
+            <h2 class="diagram-title">SepFormer Architecture Overview</h2>
+            <div class="network-diagram">
+                <div class="diagram-box encoder-box">Encoder</div>
+                <div class="arrow"></div>
+                <div class="diagram-box masknet-box">
+                    <div>
+                        <div class="diagram-box transformer-box">Intra<br>Transformer</div>
+                        <div class="arrow"></div>
+                        <div class="diagram-box transformer-box">Inter<br>Transformer</div>
+                    </div>
+                    <div>MaskNet<br>(Dual-Path)</div>
+                </div>
+                <div class="arrow"></div>
+                <div class="diagram-box decoder-box">Decoder</div>
+            </div>
+        </div>

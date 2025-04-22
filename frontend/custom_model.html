@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyTorch Code - Dark Theme</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            padding: 20px;
+            margin: 0;
+        }
+        .code-container {
+            background-color: #252526;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: auto;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        pre {
+            margin: 0;
+            padding: 0;
+        }
+        .comment { color: #6A9955; }
+        .keyword { color: #569CD6; }
+        .function { color: #DCDCAA; }
+        .string { color: #CE9178; }
+        .variable { color: #9CDCFE; }
+        .number { color: #B5CEA8; }
+        .module { color: #4EC9B0; }
+        .operator { color: #D4D4D4; }
+        .line-number {
+            color: #858585;
+            text-align: right;
+            padding-right: 15px;
+            user-select: none;
+            border-right: 1px solid #404040;
+            margin-right: 10px;
+            display: inline-block;
+            min-width: 30px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 15px;
+            background-color: #333333;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin-bottom: 0;
+        }
+        .file-name {
+            font-size: 14px;
+            color: #9CDCFE;
+        }
+        .language-badge {
+            background-color: #4d4d4d;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #cecece;
+        }
+        .code-content {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="code-container">
+        <div class="header">
+            <span class="file-name">model.py</span>
+            <span class="language-badge">Python</span>
+        </div>
+        <div class="code-content">
+            <pre><code><span class="line-number">1</span><span class="comment"># Bidirectional LSTM layer for sequential processing</span>
+<span class="line-number">2</span><span class="variable">lstm</span> <span class="operator">=</span> <span class="module">torch</span>.<span class="module">nn</span>.<span class="function">LSTM</span>(<span class="variable">input_size</span>, <span class="variable">hidden_size</span>, <span class="variable">num_layers</span><span class="operator">=</span><span class="number">1</span>, <span class="variable">bidirectional</span><span class="operator">=</span><span class="keyword">True</span>)
+<span class="line-number">3</span>
+<span class="line-number">4</span><span class="comment"># Linear layer for feature transformation</span>
+<span class="line-number">5</span><span class="variable">linear</span> <span class="operator">=</span> <span class="module">torch</span>.<span class="module">nn</span>.<span class="function">Linear</span>(<span class="variable">in_features</span>, <span class="variable">out_features</span>)
+<span class="line-number">6</span>
+<span class="line-number">7</span><span class="comment"># Activation function to introduce non-linearity</span>
+<span class="line-number">8</span><span class="variable">relu</span> <span class="operator">=</span> <span class="module">torch</span>.<span class="module">nn</span>.<span class="function">ReLU</span>(<span class="variable">inplace</span><span class="operator">=</span><span class="keyword">False</span>)
+<span class="line-number">9</span>
+<span class="line-number">10</span><span class="comment"># Loss metric for model evaluation</span>
+<span class="line-number">11</span><span class="variable">mse_stats</span> <span class="operator">=</span> <span class="module">sb</span>.<span class="module">utils</span>.<span class="module">metric_stats</span>.<span class="function">MetricStats</span>(<span class="variable">metric</span><span class="operator">=</span><span class="module">sb</span>.<span class="module">nnet</span>.<span class="module">losses</span>.<span class="function">mse_loss</span>)</code></pre>
+        </div>
+    </div>
+</body>
+</html>
