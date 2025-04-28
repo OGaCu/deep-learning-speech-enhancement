@@ -8,6 +8,7 @@ Implemented and trained PyTorch based deep neural network models that produce a 
 This technique serves as a critical component for **voice assistants** such as Siri and Alexa, where enhanced speech signals significantly improve the accuracy of automated speech detection and recognition.
 
 [Click here for accessing this repo](https://github.com/OGaCu/deep-learning-speech-enhancement/edit/main/README.md)
+
 [Click here for more **in-depth Methodology on the wesite**](https://sites.google.com/umich.edu/eecs-351noisefiltering/methods)
 
 ## Features
